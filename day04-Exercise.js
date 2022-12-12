@@ -1,31 +1,24 @@
-//answer1 normal way
-let a = 5;
-let msg = "";
-let code = 1;
-for (i = 1; i < a; i++) {
-    console.log(i);
-    for (j = 1; j <= i; j++) {
-        msg += "0" + code + ' ';
-        code++
-    }
-    msg +="\n"
-}
-console.log(msg);
-
+//answer1 
 //function
-let codex = 1
-let segiTiga = (x) => {
-    for (b = 1; b < x; b++) {
-        let pesan = ""
-        for (c = 1; c <= b; c++) {
-            pesan += "0" + codex + " "
-            codex++
-
+function triangle (angkaS){
+    let value = 1;
+    let result = ""
+    for(i=0;i<angkaS;i++){
+        for(j=0;j<=i;j++){
+            if(value > 9){
+                result += value++ + " ";
+                console.log(result)
+            }
+            else{
+                result+="0" + value++ +" "
+                console.log(result)
+            }
         }
-        console.log(pesan)
+        result +="\n"
     }
+    return result
 }
-console.log(segiTiga(5))
+console.log(triangle(4))
 
 
 
@@ -48,19 +41,23 @@ for (n = 1; n <= 30; n++) {
 
 // with function
 function fizzbuzz(r){
+    let hasilA
     for(let i = 1; i <= r; i++){
       if(i % 15 === 0 ){
-        console.log(`${i} is FizzBuzz`);
+       hasilA = `${r} is FizzBuZZ`
       }else if (i % 3 === 0){
-        console.log(`${i} is Fizz`);
+       hasilA = `${r} is Fizz`
       }else if (i % 5 === 0){
-        console.log(`${i} is Buzz`);
+       hasilA = `${r} is BuZZ`
       }else{
-        console.log(i);
+        hasilA = "Neither all"
       }
     }
+    return hasilA
   }
-  console.log(fizzbuzz(30))
+  console.log(fizzbuzz(30));
+  console.log(fizzbuzz(10));
+  console.log(fizzbuzz(9));
 
 //answer no 3
 //normal way
@@ -87,23 +84,25 @@ else {
 //with function
 
 function bmi(w,h) {
+    let hasilB =""
     let result = w / (h**2)
     if (result < 18.5) {
-        return"lessweight"
+        hasilB ="lessweight"
     }
     else if (result >= 18.5 && result <=24.9)
      {
-        return "Ideal"
+        hasilB ="Ideal"
     }
     else if (result >= 25.0 && result <=29.9) {
-        return "Overweight"
+        hasilB ="Overweight"
     }
     else if (result >= 30.0 && result <=39.9) {
-        return " Very Overweight"
+        hasilB =" Very Overweight"
     }
     else {
-        return "Obese"
+        hasilB ="Obese"
     }
+    return hasilB
 }
 console.log(bmi(70,1.8))
 
@@ -113,9 +112,9 @@ console.log(bmi(70,1.8))
 function removeOdd(number) {
     return number.filter(m => m % 2 == 0)
 }
-const evenNumb = removeOdd([1,2,3,4,5,6,7,8,9,10])
-console.log(evenNumb)
+console.log(removeOdd([1,2,3,4,5,6,7,8,9,10]))
 // berlaku untuk filter, math, for each
+
 //answer no 5
 function strToArr(str) {
     return str.split(" ")
